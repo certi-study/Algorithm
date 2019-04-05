@@ -1,3 +1,5 @@
+#pragma GCC optimize ("O3")
+/* O3 옵션을 사용할 경우 편법으로 최적화가 되지 않는다... */
 #include <stdio.h>
 #include <algorithm>
 #include <time.h>
@@ -28,7 +30,6 @@ void quick(int *arr, int l, int r) {
 		quick(arr, i, r);
 }
 
-/* 매개변수를 넘기기 보다는 전역 변수 사용해서 넘기는게 빠름을 알 수 있다. */
 int x, y;
 void fast_quick() {
 	int i = x;
@@ -57,7 +58,6 @@ void fast_quick() {
 	}
 }
 
-/* register 사용시 좀더 빨리짐을 확인 할 수 있다. */
 void register_fast_quick() {
 	register int i = x;
 	register int j = y;
@@ -85,7 +85,6 @@ void register_fast_quick() {
 	}
 }
 
-/* 전역 변수 연산 보다 로컬 변수 연산이 빠름을 알 수 있다. */
 int p;
 void slow_quick(int *arr, int l, int r) {
 	x = l;
