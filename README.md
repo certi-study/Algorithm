@@ -21,17 +21,20 @@ blar blar
 ```
 http://ghchart.rshah.org    
 ```
+
+- GCC Compiler Optimizing Sequence
 ~~~
-**GCC Compiler Optimizing Sequence**
 http://egloos.zum.com/studyfoss/v/5276500
 ~~~
+
+- Switch VS if
 ~~~
-**Switch VS if**
 https://thinkpro.tistory.com/m/132
 https://kldp.org/node/62262
 ~~~
+
+- C Code Optimizing
 ~~~
-**C Code Optimizing**
 https://kldp.org/node/79109
 ~~~
 
