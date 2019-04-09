@@ -13,10 +13,14 @@ Prepare for level of expert in Samsung
  **chart from : http://ghchart.rshah.org**  
   
 # Method  
-## 1. For statement -> Switch statement + Hard coding  
+  
+## 1. Using Register variable  
 blar blar  
   
-## 2. Delete If statement in For statement  
+## 2. For statement -> Switch statement + Hard coding  
+blar blar  
+  
+## 3. Delete If statement in For statement  
 blar blar  
   
 ---
