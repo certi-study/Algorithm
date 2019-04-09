@@ -13,8 +13,12 @@ Prepare for level of expert in Samsung
  **chart from : http://ghchart.rshah.org**  
   
 # Method  
+## 1. For statement -> Switch statement + Hard coding  
 blar blar  
-
+  
+## 2. Delete If statement in For statement  
+blar blar  
+  
 ---
 # Refer  
 - Git chart  
