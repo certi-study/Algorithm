@@ -11,18 +11,21 @@ Prepare for level of expert in Samsung
 | <img src="https://avatars1.githubusercontent.com/u/31812857?v=4&s=100"> | <a href = "https://github.com/Minseok-Hong"> **Min Seok Hong** </a> | Maker |
 
  **chart from : http://ghchart.rshah.org**  
-  
+
 # Method  
-  
-## 1. Using Register variable  
+
+## 1. Using REGISTER variable  
 blar blar  
-  
-## 2. For statement -> Switch statement + Hard coding  
+
+## 2. FOR statement -> SWITCH statement + HARD coding  
 blar blar  
-  
-## 3. Delete If statement in For statement  
+
+## 3. Delete IF statement in FOR statement  
 blar blar  
-  
+
+## 4. Using POINTER instead of ARRAY  
+blar blar  
+
 ---
 # Refer  
 - Git chart  
