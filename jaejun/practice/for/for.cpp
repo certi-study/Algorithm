@@ -75,7 +75,7 @@ int main() {
             t++;
 	}
 	
-	for(register int i = 0; i++ < iter;){
+	for(register int i = iter - 1; i--;){
         t++;t++;t++;t++;t++;t++;t++;t++;t++;t++;
     }
 	printf("%d\n", clock() - start);
