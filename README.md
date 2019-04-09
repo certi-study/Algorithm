@@ -25,7 +25,10 @@ blar blar
 
 ## 4. Using POINTER instead of ARRAY  
 blar blar  
-
+  
+## 5. Using SWITCH statement instead of ELSE IF statement when there are many cases  
+blar blar  
+  
 ---
 # Refer  
 - Git chart  
