@@ -22,11 +22,14 @@ blar blar
 
 ## 3. Delete IF statement in FOR statement  
 blar blar  
-
-## 4. Using POINTER instead of ARRAY  
+  
+## 4. No duplicate FOR statement  
 blar blar  
   
-## 5. Using SWITCH statement instead of ELSE IF statement when there are many cases  
+## 5. Using POINTER instead of ARRAY  
+blar blar  
+  
+## 6. Using SWITCH statement instead of ELSE IF statement when there are many cases  
 blar blar  
   
 ---
