@@ -32,6 +32,9 @@ blar blar
 ## 6. Using SWITCH statement instead of ELSE IF statement when there are many cases  
 blar blar  
   
+## 7. INT rather than CHAR or DOUBLE  
+blar blar  
+
 ---
 # Refer  
 - Git chart  
