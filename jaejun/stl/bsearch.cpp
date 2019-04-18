@@ -6,7 +6,7 @@ using namespace std;
 #define N (1 << 22)
 #define M 1 << 20
 
-/* STL¿¡ ÀÖ´Â °Í */
+/* STLì— ìžˆëŠ” ê²ƒ */
 int compare(void const *first, void const *second)
 {
 	if (*(int*)first > *(int*)second)
@@ -17,7 +17,7 @@ int compare(void const *first, void const *second)
 		return 0;
 }
 
-/* ÀÏ¹Ý (»ï¼º Ã¤Á¡ ¼­¹ö¿¡¼­µ¹·Áº» °á°ú STLº¸´Ù ´À¸²) */
+/* ì¼ë°˜ (ì‚¼ì„± ì±„ì  ì„œë²„ì—ì„œëŒë ¤ë³¸ ê²°ê³¼ STLë³´ë‹¤ ëŠë¦¼) */
 int bst(int *arr, int key, int size) {
 	register int * p = arr;
 	register int *m;
@@ -35,7 +35,7 @@ int bst(int *arr, int key, int size) {
 	return -1;
 }
 
-/* ÃÖÀûÈ­ 1 - "¿©±â¼­´Â" mÀ» Æ÷ÀÎÅÍ·Î »ç¿ëÇÏÁö ¾Ê´Â°Ô ¿¬»ê ¼ö ÁÙÀÏ ¼ö ÀÖÀ½ */
+/* ìµœì í™” 1 - "ì—¬ê¸°ì„œëŠ”" mì„ í¬ì¸í„°ë¡œ ì‚¬ìš©í•˜ì§€ ì•ŠëŠ”ê²Œ ì—°ì‚° ìˆ˜ ì¤„ì¼ ìˆ˜ ìžˆìŒ */
 int bst_op1(int *arr, int key, int size) {
 	register int *p = arr;
 	register int m;
@@ -53,7 +53,7 @@ int bst_op1(int *arr, int key, int size) {
 	return -1;
 }
 
-/* ÃÖÀûÈ­ 2 - "=="ÀÇ °æ¿ì´Â ±ØÈ÷ µå¹® ÄÉÀÌ½º¶ó °¡Àå ¾Æ·¡ ¹èÄ¡ */
+/* ìµœì í™” 2 - "=="ì˜ ê²½ìš°ëŠ” ê·¹ížˆ ë“œë¬¸ ì¼€ì´ìŠ¤ë¼ ê°€ìž¥ ì•„ëž˜ ë°°ì¹˜ */
 int bst_op2(int *arr, int key, int size) {
 	register int *p = arr;
 	register int m;
@@ -71,7 +71,7 @@ int bst_op2(int *arr, int key, int size) {
 	return -1;
 }
 
-/* ÃÖÀûÈ­ 3 - ³ª´©±â ´ë½Å "ºñÆ® ¿¬»êÀÚ" »ç¿ë */
+/* ìµœì í™” 3 - ë‚˜ëˆ„ê¸° ëŒ€ì‹  "ë¹„íŠ¸ ì—°ì‚°ìž" ì‚¬ìš© */
 int bst_op3(int *arr, int key, int size) {
 	register int *p = arr;
 	register int m;
@@ -89,7 +89,7 @@ int bst_op3(int *arr, int key, int size) {
 	return -1;
 }
 
-/* ÃÖÀûÈ­ 4 - ºñ±³ ÁÙÀÌ±â */
+/* ìµœì í™” 4 - ë¹„êµ ì¤„ì´ê¸° */
 /* reference: http://www.cplusplus.com/forum/general/170539/ */
 int bst_op4(int *arr, int key, int size) {
 	register int *p = arr;
@@ -111,79 +111,78 @@ int bst_op4(int *arr, int key, int size) {
 }
 
 
-/* ÃÖÀûÈ­ 5 - ¹Ýº¹¹® Á¦°Å */
+/* ìµœì í™” 5 - ë°˜ë³µë¬¸ ì œê±° */
 /* reference: https://stackoverflow.com/questions/20024634/how-can-i-optimize-binary-search */
-int bst_op5(int *arr, int key, int size) {
+int bst_op5(int *arr, int key) {
 	register int *p = arr;
 	register int m = N >> 1;
-	register int l = -1;
+	register int l = 0;
 
-	if (p[m] < key) // 21
+	if (p[m] <= key) // 21
 		l = N - m;
 	m = m >> 1;
-	if (p[l + m] < key) //20
+	if (p[l + m] <= key) //20
 		l += m;
 	m = m >> 1;
-	if (p[l + m] < key)
+	if (p[l + m] <= key)
 		l += m;
 	m = m >> 1;
-	if (p[l + m] < key)
+	if (p[l + m] <= key)
 		l += m;
 	m = m >> 1;
-	if (p[l + m] < key)
+	if (p[l + m] <= key)
 		l += m;
 	m = m >> 1;
-	if (p[l + m] < key)
+	if (p[l + m] <= key)
 		l += m;
 	m = m >> 1;
-	if (p[l + m] < key) //15
+	if (p[l + m] <= key) //15
 		l += m;
 	m = m >> 1;
-	if (p[l + m] < key)
+	if (p[l + m] <= key)
 		l += m;
 	m = m >> 1;
-	if (p[l + m] < key)
+	if (p[l + m] <= key)
 		l += m;
 	m = m >> 1;
-	if (p[l + m] < key)
+	if (p[l + m] <= key)
 		l += m;
 	m = m >> 1;
-	if (p[l + m] < key)
+	if (p[l + m] <= key)
 		l += m;
 	m = m >> 1;
-	if (p[l + m] < key) // 10
+	if (p[l + m] <= key) // 10
 		l += m;
 	m = m >> 1;
-	if (p[l + m] < key)
+	if (p[l + m] <= key)
 		l += m;
 	m = m >> 1;
-	if (p[l + m] < key)
+	if (p[l + m] <= key)
 		l += m;
 	m = m >> 1;
-	if (p[l + m] < key)
+	if (p[l + m] <= key)
 		l += m;
 	m = m >> 1;
-	if (p[l + m] < key)
+	if (p[l + m] <= key)
 		l += m;
 	m = m >> 1;
-	if (p[l + m] < key) // 5
+	if (p[l + m] <= key) // 5
 		l += m;
 	m = m >> 1;
-	if (p[l + m] < key)
+	if (p[l + m] <= key)
 		l += m;
 	m = m >> 1;
-	if (p[l + m] < key)
+	if (p[l + m] <= key)
 		l += m;
 	m = m >> 1;
-	if (p[l + m] < key)
+	if (p[l + m] <= key)
 		l += m;
 	m = m >> 1;
-	if (p[l + m] < key)
+	if (p[l + m] <= key)
 		l += m;
 	m = m >> 1;
-	if (p[l + m] < key)
+	if (p[l + m] <= key)
 		l += m;
-
 
 	if (l > N or p[l] != key)
 		return -1;
@@ -239,7 +238,7 @@ int main() {
 
 	start = clock();
 	for (register int i = 0; i < M; i++)
-		*find = bst_op5(p, *(q + i), N);
+		*find = bst_op5(p, *(q + i));
 	cout << "Op5: " << clock() - start << endl;
 
 	return 0;
