@@ -19,6 +19,13 @@ void b(){
     y=0;
 }
 
+void c(register int x){
+	x++;
+    x = 0;
+    x--;
+    x = 0;
+}
+
 int main(){
 	int start;
     int x = 0;
@@ -33,6 +40,13 @@ int main(){
     y = 0;
     for(int i = N;i--;){
         b();
+    }
+    cout<<clock()-start<<endl;
+    
+    start = clock();
+    x = 0;
+    for(int i = N;i--;){
+        c(x);
     }
     cout<<clock()-start<<endl;
     
