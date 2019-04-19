@@ -38,6 +38,9 @@ blar blar
 ## 8. TERNARY OPERATOR rather than IF ELSE  
 blar blar  
 
+## 9. Using REGISTER PARAMETER instead of GLOBAL variable  
+blar blar  
+
 ---
 # Refer  
 - Git chart  
