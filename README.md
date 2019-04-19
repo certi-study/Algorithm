@@ -34,6 +34,9 @@ blar blar
   
 ## 7. INT rather than CHAR or DOUBLE  
 blar blar  
+  
+## 8. TERNARY OPERATOR rather than IF ELSE  
+blar blar  
 
 ---
 # Refer  
