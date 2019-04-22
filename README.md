@@ -42,7 +42,10 @@ blar blar
 blar blar  
   
 ## 10. There is no difference b/w BIT and NORMAL operator when no use compiler option  
-blar blar  
+blar blar    
+  
+## 11. CHAR ARRAY is faster than string  
+blar blar   
 
 ---
 # Refer  
