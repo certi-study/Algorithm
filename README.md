@@ -40,6 +40,9 @@ blar blar
 
 ## 9. Using REGISTER PARAMETER instead of GLOBAL variable  
 blar blar  
+  
+## 10. There is no difference b/w BIT and NORMAL operator when no use compiler option  
+blar blar  
 
 ---
 # Refer  
