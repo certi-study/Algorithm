@@ -32,7 +32,7 @@ blar blar
 ## 6. Using SWITCH statement instead of ELSE IF statement when there are many cases  
 blar blar  
   
-## 7. INT rather than CHAR or DOUBLE  
+## 7. INT rather than CHAR or DOUBLE or BOOL  
 blar blar  
   
 ## 8. TERNARY OPERATOR rather than IF ELSE  
