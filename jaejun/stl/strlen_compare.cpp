@@ -7,33 +7,32 @@ using namespace std;
 
 #define N 1234567
 
-int len(register const char *a) {
+inline int len(register const char *a) {
 	register const char *b = a;
 	while (*a++);
 	return a - b - 1;
 }
 
-int len2(register const char *a) {
+inline int len2(register const char *a) {
 	register const char *b = a;
 	for (; *b; b++);
 	return b - a;
 }
 
-int len3(register const char *a) {
+inline int len3(register const char *a) {
 	register const char *b = a;
 	for (; *b++;);
 	return b - a;
 }
 
-int len4(register const char *a) {
+inline int len4(register const char *a) {
 	register const char *b = a;
 	for (b = a; *b; b++);
 	return b - a;
 }
 
-int len5(register const char *a) {
+inline int len5(register const char *a) {
 	register const char *b = a;
-	for (; *b; b++);
 	while (1) {
 		if (!*b)
 			break;
