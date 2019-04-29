@@ -109,5 +109,11 @@ int main() {
 	}
 	cout << clock() - start << endl;
 
+	start = clock();
+	for (int i = 0; i < N; i++) {
+		/* 만약 a를 register로 선언한다면 strlen과 거의 동급 */
+		sizeof(a) - 1;
+	}
+	cout << clock() - start << endl;
 	return 0;
 }

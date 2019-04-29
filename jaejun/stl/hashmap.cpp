@@ -24,6 +24,25 @@ unsigned long hash(register const char *str) {
 	return h & mod;
 }
 
+int find(register const char *key, register char *data)
+{
+	register unsigned long h = hash(key);
+	register int cnt = MAX_TABLE;
+	register Hash *p = &tb[0];
+
+	while (p[h].key[0] != 0 && --cnt)
+	{
+		if (strcmp(p[h].key, key) == 0)
+		{
+			strcpy(data, p[h].data);
+			return 1;
+		}
+		h = (h + 1) & MOD_TABLE;
+	}
+	return 0;
+}
+
+
 int add(register char const *key, register char const *data) {
 	register unsigned long h = hash(key);
 	register Hash *p = &tb[0];
