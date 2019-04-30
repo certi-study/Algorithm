@@ -20,7 +20,11 @@ Prepare for level of expert in Samsung
 ```
 register unsigned int varible = 1;
 ```
-## 2. LOOP UNROLLING(반복문에 하드코딩)      
+## 2. 전위 연산자 사용  
+전위 연산자와 후위 연산자의 성능 차이는 미비하지만 **전자가 조금 빠르다고 한다**   
+후위 연산자는 **복사 과정**을 거치기 때문에 약간 느릴 수 있다  
+`http://egloos.zum.com/indra207/v/4848273`
+## 3. LOOP UNROLLING(반복문에 하드코딩)      
 어셈블할 때 **조건문의 갯수가 작아져** 속도가 빨라진다  
 또한 파이프라인 효과와 캐시 히트 효과가 있다고 한다  
 ```
@@ -37,7 +41,8 @@ for (register unsigned int i = 0; i < 20; i += 5) {
   a[i + 3] = i + 3;
   a[i + 4] = i + 4;
 }
-```
+```  
+`http://pkban.blogspot.com/2017/08/loop-unrolling-optimization.html`  
 ## 3. Delete IF statement in FOR statement  
 blar blar  
   
