@@ -1,4 +1,4 @@
-정렬
+﻿정렬
 - 퀵정렬
 - 병합정렬
 - 계수정렬
@@ -18,3 +18,5 @@
 문자열(fast ver)
 - strcmp
 - strlen
+- strcpy
+- strcat
