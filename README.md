@@ -43,6 +43,21 @@ for (register unsigned int i = 0; i < 100; i += 5) {
 }
 ```  
 참고: `http://pkban.blogspot.com/2017/08/loop-unrolling-optimization.html`  
+## 4. INT형 사용하기   
+컴퓨터는 기본적으로 **int형에 최적화** 되있다  
+그래서 char형, bool형, double형을 쓰는 것보다 성능이 좋다   
+## 5. 구조체 포인터 매개변수  
+함수의 매개변수(int형 기준)가 **4개가 넘어가게 되면** 레지스터에서 **스택을 이용**하게 된다   
+이 때 **구조체 포인터를 매개변수로** 사용하자  
+```
+int a(int x, int y, int z, int w, int u);
+```
+를
+```
+int a(struct name &x);
+```
+로 바꿔 사용하자  
+참고: `http://ilovebird.egloos.com/v/10454689`  
 ## 3. Delete IF statement in FOR statement  
 blar blar  
   
@@ -55,13 +70,10 @@ blar blar
 ## 6. Using SWITCH statement instead of ELSE IF statement when there are many cases  
 blar blar  
   
-## 7. INT rather than CHAR or DOUBLE or BOOL  
-blar blar  
-  
 ## 8. TERNARY OPERATOR rather than IF ELSE  
 blar blar  
 
-## 9. Using REGISTER PARAMETER instead of GLOBAL variable  
+## 9. Using PARAMETER instead of GLOBAL variable  
 blar blar  
   
 ## 10. There is no difference b/w BIT and NORMAL operator when no use compiler option(이거 차이 있다고 다시적기)    
@@ -70,7 +82,7 @@ blar blar
 ## 11. CHAR ARRAY is faster than string  
 blar blar   
 
-## 매개변수 인트 제외는 &나 \*이용, 전위 연산자, 인자 4개 이상 넘길 때..., 곱하기를 비트연산자 + 덧셈으로, 나눗셈 및 나머지 연산 쓰기    
+## 매개변수 인트 제외는 &나 \*이용, 전위 연산자, 곱하기를 비트연산자 + 덧셈으로, 나눗셈 및 나머지 연산 쓰기    
 
 ---
 # Refer  
