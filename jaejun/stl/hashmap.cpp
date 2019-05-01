@@ -28,13 +28,12 @@ int find(register const char *key, register char *data)
 {
 	register unsigned long h = hash(key);
 	register int cnt = MAX_TABLE;
-	register Hash *p = &tb[0];
 
-	while (p[h].key[0] != 0 && --cnt)
+	while (tb[h].key[0] != 0 && --cnt)
 	{
-		if (strcmp(p[h].key, key) == 0)
+		if (strcmp(tb[h].key, key) == 0)
 		{
-			strcpy(data, p[h].data);
+			strcpy(data, tb[h].data);
 			return 1;
 		}
 		h = (h + 1) & MOD_TABLE;
@@ -45,11 +44,10 @@ int find(register const char *key, register char *data)
 
 int add(register char const *key, register char const *data) {
 	register unsigned long h = hash(key);
-	register Hash *p = &tb[0];
     
-	while (p[h].key[0] != 0) {
+	while (tb[h].key[0] != 0) {
 		/* 이미 데이터가 있음 */
-    if (strcmp(p[h].key, key) == 0)
+    if (strcmp(tb[h].key, key) == 0)
 			return 0;
       
     /* h 증가 */
@@ -57,8 +55,8 @@ int add(register char const *key, register char const *data) {
 	}
 
   /* h 위치에 데이터 넣음 */
-	strcpy(p[h].key, key);
-	strcpy(p[h].data, data);
+	strcpy(tb[h].key, key);
+	strcpy(tb[h].data, data);
   
   /* 삽입 성공 */
 	return 1;
