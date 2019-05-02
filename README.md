@@ -78,19 +78,21 @@ for(register unsigned int i = 0; i < N; ++i){
 ```
 위 두가지 접근 방법 중 포인터의 **효과를 볼 수 있는 것은 순차적 접근**이다  
 인덱스 접근은 단순히 배열을 쓰는 것과 차이점이 없다  
-## 7. Delete IF statement in FOR statement  
+## 8. 빠른 연산을 할 때 전역 변수를 지양하자   
+전역변수(데이터 영역)와 지역변수(스택 영역)가 **저장되는 위치는 다르다**   
+일반적으로 **지역변수가 연산이 빠르다**  
+함수 호출시 인수를 줄이기 위해 전역 변수를 사용하는 경우가 있는데  
+연산은 매개변수로 받은 변수가 빠르니 잘 선택하자   
+## 8. Delete IF statement in FOR statement  
 blar blar  
   
-## 8. No duplicate FOR statement  
+## 9. No duplicate FOR statement  
 blar blar  
   
-## 9. Using SWITCH statement instead of ELSE IF statement when there are many cases  
+## 10. Using SWITCH statement instead of ELSE IF statement when there are many cases  
 blar blar  
   
-## 10. TERNARY OPERATOR rather than IF ELSE  
-blar blar  
-
-## 11. Using PARAMETER instead of GLOBAL variable  
+## 11. TERNARY OPERATOR rather than IF ELSE  
 blar blar  
   
 ## 12. There is no difference b/w BIT and NORMAL operator when no use compiler option(이거 차이 있다고 다시적기)    
@@ -99,7 +101,7 @@ blar blar
 ## 13. CHAR ARRAY is faster than string  
 blar blar   
 
-## 매개변수 인트 제외는 &나 \*이용, 전위 연산자, 곱하기를 비트연산자 + 덧셈으로, 나눗셈 및 나머지 연산 쓰기, 단순히 루프일 경우 i>0을 조건으로      
+## 매개변수 인트 제외는 &나 \*이용, 전위 연산자, 곱하기를 비트연산자 + 덧셈으로, 나눗셈 및 나머지 연산 쓰기, 단순히 루프일 경우 i>0을 조건으로       
 
 ---
 # Refer  
