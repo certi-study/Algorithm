@@ -83,6 +83,7 @@ for(register unsigned int i = 0; i < N; ++i){
 일반적으로 **지역변수가 연산이 빠르다**  
 함수 호출시 인수를 줄이기 위해 전역 변수를 사용하는 경우가 있는데  
 연산은 매개변수로 받은 변수가 빠르니 잘 선택하자   
+또한 전역 변수로 정의된 변수는 **register를 활용할 수 없다**  
 ## 8. Delete IF statement in FOR statement  
 blar blar  
   
