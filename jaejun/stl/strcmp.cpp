@@ -1,45 +1,7 @@
-inline int strcmp(register const char *a, register const char *b) {
-	while (1) {
-		if (!*a)
+inline int equal5(register const char *a, register const char *b) {
+	for (; *a == *b; ++a, ++b)
+		if (*a == '\0')
 			return 0;
-		a++;
-		b++;
-		if (!*a)
-			return 0;
-		a++;
-		b++;
-		if (!*a)
-			return 0;
-		a++;
-		b++;
-		if (!*a)
-			return 0;
-		a++;
-		b++;
-		if (!*a)
-			return 0;
-		a++;
-		b++;
-		if (!*a)
-			return 0;
-		a++;
-		b++;
-		if (!*a)
-			return 0;
-		a++;
-		b++;
-		if (!*a)
-			return 0;
-		a++;
-		b++;
-		if (!*a)
-			return 0;
-		a++;
-		b++;
-		if (!*a)
-			return 0;
-		a++;
-		b++;
-	}
+
 	return *a - *b;
 }
