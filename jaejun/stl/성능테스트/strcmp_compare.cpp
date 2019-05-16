@@ -70,51 +70,12 @@ inline int equal5(register const char *a, register const char *b) {
 	return *a - *b;
 }
 
-/* 5 최적화 */
+/* 기본 STL 사용 */
 inline int equal6(register const char *a, register const char *b) {
-	while (1) {
-		if (!*a)
-			return 0;
-		a++;
-		b++;
-		if (!*a)
-			return 0;
-		a++;
-		b++;
-		if (!*a)
-			return 0;
-		a++;
-		b++;
-		if (!*a)
-			return 0;
-		a++;
-		b++;
-		if (!*a)
-			return 0;
-		a++;
-		b++;
-		if (!*a)
-			return 0;
-		a++;
-		b++;
-		if (!*a)
-			return 0;
-		a++;
-		b++;
-		if (!*a)
-			return 0;
-		a++;
-		b++;
-		if (!*a)
-			return 0;
-		a++;
-		b++;
-		if (!*a)
-			return 0;
-		a++;
-		b++;
-	}
-	return *a - *b;
+	if (less<const char *>()(a, b) == 0 && greater<const char *>()(a, b) == 0)
+		return 1;
+	else
+		return 0;
 }
 
 int main() {
