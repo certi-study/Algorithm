@@ -29,6 +29,7 @@ register unsigned int varible = 1;
 ```
 inline void test(){ blar }
 ```
+참고: `https://blog.plorence.kr/483`  
 ## 3. 전위 연산자 사용  
 전위 연산자와 후위 연산자의 성능 차이는 미비하지만 **전자가 조금 빠르다고 한다**   
 후위 연산자는 **복사 과정**을 거치기 때문에 약간 느릴 수 있다  
