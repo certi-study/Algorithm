@@ -24,7 +24,7 @@ void sort(int *arr, int len) {
 	while (j < len)
 		arr_sorted[k++] = arr[j++];
  
-    for (register int i = 0; i < len; ++i) {
+    	for (i = 0; i < len; ++i) {
 		arr[i] = arr_sorted[i];
 	}
 }
