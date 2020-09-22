@@ -46,6 +46,12 @@ namespace out{
     inline void writeInt(int i){
         register char digit[16];
         register int n = 0;
+        
+        if(i == 0){
+            write('0');
+            return;
+        }
+        
         while(i){
             digit[n++] = (i % 10) | 48;
             i /= 10;
