@@ -68,7 +68,27 @@ int a(struct name &x);
 ```
 로 바꿔 사용하자  
 참고: `http://ilovebird.egloos.com/v/10454689`   
-## 7. 포인터로 배열 접근  
+## 7. FOR문을 거꾸로  
+i < n 의 수식의 경우 컴퓨터는 i - n < 0 으로 변환하여 비교한다  
+이를 최소화하기 위해 아래와 같은 for 문을 사용하자 
+```
+for (register int i = N; i--;){
+  do something...
+}
+```
+## 8. 배열의 초기화   
+주기적으로 배열을 초기화해야할 때가 있는데  
+이때는 루프를 사용하기 보다는 선언을 통한 초기화를 하자  
+```
+int a[N] = {0};
+/*
+int a[N];
+for (int i = 0; i < N; ++i)
+  a[i] = 0;
+}
+*/
+```
+## 9. 포인터로 배열 접근  
 배열을 접근할 때 **포인터로 접근**하자  
 배열을 포인터로 접근할 때 **두가지 방법**이 있다  
 1. 순차적 접근  
@@ -88,28 +108,28 @@ for(register unsigned int i = 0; i < N; ++i){
 ```
 위 두가지 접근 방법 중 포인터의 **효과를 볼 수 있는 것은 순차적 접근**이다  
 인덱스 접근은 단순히 배열을 쓰는 것과 차이점이 없다  
-## 8. 빠른 연산을 할 때 전역 변수를 지양하자   
+## 10. 빠른 연산을 할 때 전역 변수를 지양하자   
 전역변수(데이터 영역)와 지역변수(스택 영역)가 **저장되는 위치는 다르다**   
 일반적으로 **지역변수가 연산이 빠르다**  
 함수 호출시 인수를 줄이기 위해 전역 변수를 사용하는 경우가 있는데  
 연산은 매개변수로 받은 변수가 빠르니 잘 선택하자   
 또한 전역 변수로 정의된 변수는 **register를 활용할 수 없다**  
-## 9. Delete IF statement in FOR statement  
+## 11. Delete IF statement in FOR statement  
 blar blar  
   
-## 10. No duplicate FOR statement  
+## 12. No duplicate FOR statement  
 blar blar  
   
-## 11. Using SWITCH statement instead of ELSE IF statement when there are many cases  
+## 13. Using SWITCH statement instead of ELSE IF statement when there are many cases  
 blar blar  
   
-## 12. TERNARY OPERATOR rather than IF ELSE  
+## 14. TERNARY OPERATOR rather than IF ELSE  
 blar blar  
   
-## 13. There is no difference b/w BIT and NORMAL operator when no use compiler option(이거 차이 있다고 다시적기)    
+## 15. There is no difference b/w BIT and NORMAL operator when no use compiler option(이거 차이 있다고 다시적기)    
 blar blar    
   
-## 14. CHAR ARRAY is faster than string  
+## 16. CHAR ARRAY is faster than string  
 blar blar   
 
 ## 매개변수 인트 제외는 &나 \*이용, 전위 연산자, 곱하기를 비트연산자 + 덧셈으로, 나눗셈 및 나머지 연산 쓰기, 단순히 루프일 경우 i>0을 조건으로       
