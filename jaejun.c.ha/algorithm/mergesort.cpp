@@ -2,6 +2,7 @@
 
 int arr_sorted[SIZE];
 
+/* Reference: https://na982.tistory.com */
 void sort(int *arr, int len) {
 	if (len < 2)
 		return;
