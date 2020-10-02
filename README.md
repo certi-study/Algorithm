@@ -14,6 +14,10 @@ Prepare for level of expert in Samsung
 
 # Method  
 
+## 0. C vs CPP  
+**기본적인 속도는 C**가 빠름  
+하지만 함수를 어느 정도 사용할 경우, **INLINE화 할 수 있는 CPP**가 빠름  
+
 ## 1. REGISTER 변수 사용    
 그냥 안쓰면 손해...  
 단, 사용할 수 있는 **register 변수 횟수가 제한**되어 있음  
