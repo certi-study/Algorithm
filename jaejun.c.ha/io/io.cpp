@@ -1,6 +1,21 @@
 #define SIZE 65536 // 1 << 16
 
 namespace in{
+ /****************************************************************** 
+  만약 읽어야할 항목의 크기가 크지 않다면                        
+  
+  1. ridx = 0으로 설정하고                                        
+  
+  2. fread(rbuffer, 1, SIZE, stdin); 를 main문 시작 후 바로 사용   
+  
+  3. getChar에서 아래 항목 제거하기
+  
+  if(ridx == SIZE){
+    fread(rbuffer, 1, SIZE, stdin);
+    ridx = 0;
+  }
+ ******************************************************************/
+    
     char buffer[SIZE]; 
     int index = SIZE;
  
@@ -44,6 +59,7 @@ namespace out{
         buffer[idx++] = c;
     }
     inline void writeInt(int i){
+        /* 숫자 0은 출력 되지 않으니 주의! */
         register char digit[16];
         register int n = 0;
         
