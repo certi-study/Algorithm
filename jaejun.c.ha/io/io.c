@@ -57,6 +57,7 @@ void writeChar(char c){
 }
 
 void writeInt(int i){
+  /* 숫자 0은 출력 되지 않으니 주의! */
   char digit[16];
   register int t = 0;
   while(i){
