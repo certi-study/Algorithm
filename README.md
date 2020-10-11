@@ -118,22 +118,25 @@ for(register unsigned int i = 0; i < N; ++i){
 함수 호출시 인수를 줄이기 위해 전역 변수를 사용하는 경우가 있는데  
 연산은 매개변수로 받은 변수가 빠르니 잘 선택하자   
 또한 전역 변수로 정의된 변수는 **register를 활용할 수 없다**  
-## 11. Delete IF statement in FOR statement  
+## 11. BFS / DFS는 재귀함수 대신 Queue / Stack 으로  
+**함수 호출은 시간을 많이 소모** 한다.
+배열로 구성한 Queue / Stack을 사용하자  
+## 12. Delete IF statement in FOR statement  
 blar blar  
   
-## 12. No duplicate FOR statement  
+## 13. No duplicate FOR statement  
 blar blar  
   
-## 13. Using SWITCH statement instead of ELSE IF statement when there are many cases  
+## 14. Using SWITCH statement instead of ELSE IF statement when there are many cases  
 blar blar  
   
-## 14. TERNARY OPERATOR rather than IF ELSE  
+## 15. TERNARY OPERATOR rather than IF ELSE  
 blar blar  
   
-## 15. There is no difference b/w BIT and NORMAL operator when no use compiler option(이거 차이 있다고 다시적기)    
+## 16. There is no difference b/w BIT and NORMAL operator when no use compiler option(이거 차이 있다고 다시적기)    
 blar blar    
   
-## 16. CHAR ARRAY is faster than string  
+## 17. CHAR ARRAY is faster than string  
 blar blar   
 
 ## 매개변수 인트 제외는 &나 \*이용, 전위 연산자, 곱하기를 비트연산자 + 덧셈으로, 나눗셈 및 나머지 연산 쓰기, 단순히 루프일 경우 i>0을 조건으로       
