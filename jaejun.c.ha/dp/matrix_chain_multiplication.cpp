@@ -1,3 +1,15 @@
+/* reference: 
+https://huiyu.tistory.com/entry/DP-연쇄행렬-최소곱셈-알고리즘 
+https://source-sc.tistory.com/24
+
+dp[SIZE][SIZE] = {0};
+
+dp[i][j] = min(dp[i][k] + dp[k+1][j] + matrix[i][0] * matrix[k][1] * matrix[j][1]) (i <= k < j)
+
+*/
+
+
+
 int mcm(int m[][2], int n){
   int dp[SIZE][SIZE] = {0};
   
