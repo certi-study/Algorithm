@@ -56,7 +56,11 @@ for (register unsigned int i = 0; i < 100; i += 5) {
   a[i + 4] = i + 4;
 }
 ```  
-참고: `http://pkban.blogspot.com/2017/08/loop-unrolling-optimization.html`  
+**가장 최적의 숫자는 8**이라고 한다(32비트 컴퓨터 기준)  
+또한 데이터 읽기에 최적화 되며 **쓰기에는 큰 효과가 없다**고 한다  
+참고:  
+`http://pkban.blogspot.com/2017/08/loop-unrolling-optimization.html`  
+`http://egloos.zum.com/spanthoma/v/1511234`  
 ## 5. INT형 사용하기   
 컴퓨터는 기본적으로 **int형에 최적화** 되있다  
 그래서 char형, bool형, double형을 쓰는 것보다 성능이 좋다   
