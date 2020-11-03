@@ -43,7 +43,8 @@ if __name__ == "__main__":
 
                         if now.tm_hour == END_HOUR and now.tm_min == END_MIN and now.tm_mday == END_DAY:
                                 break
-        except:
+        except Exception as e:
                 file = open("error.log", "a")
                 file.write("%02d:%02d " % (now.tm_hour, now.tm_min) + str(sys.exc_info()[0]) + "\n")
+                file.write(str(e))
                 file.close()
