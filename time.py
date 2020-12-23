@@ -1,4 +1,6 @@
 import sys
+import time
+import os
 
 from datetime import datetime
 
@@ -24,4 +26,9 @@ sum -= (start_h * 60 + start_m)
 if length == 3:
 	sum -= (minus_h * 60 + minus_m)
 
-print(int(sum / 60), sum % 60)
+while True:
+	os.system("cls")
+	now = datetime.now()
+	print("현재 시간:", now)
+	print(int(sum / 60), sum % 60)
+	time.sleep(1)
