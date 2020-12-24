@@ -1,35 +1,53 @@
 입문 시간<br>
 <input id="start_h">시 <input id="start_m">분<br>
 조식<br>
-<input name="morning" type="radio" value="0">X
+<input name="morning" type="radio" value="0" checked="checked">X
 <input name="morning" type="radio" value="30">식사
 <input name="morning" type="radio" value="10">테이크아웃
 <br>
 석식<br>
-<input name="dinner" type="radio" value="0">X
+<input name="dinner" type="radio" value="0" checked="checked">X
 <input name="dinner" type="radio" value="30">식사
 <input name="dinner" type="radio" value="10">테이크아웃
 <br>
 추가 제외 시간<br>
-<input id="minus_h">시 <input id="minus_m">분
+<input id="minus_h">시간 <input id="minus_m">분
+<br>
+채울 시간<br>
+<input id="goal_h">시간 <input id="goal_m">분
 <hr/>
 <div id="time"></div>
 <div id="work"></div>
+<div id="minus"></div>
+<div id="goal"></div>
 <script>
 	var start_h, start_m;
 	var minus_h, minus_m;
+	var goal_h, goal_m;
 	var cur_h, cur_m, cur_s;
 	
-	var text, sum;
+	var text, sum_w, sum_m;
 	function cal(){
-		start_h = Number(document.getElementById("start_h").value);
-		start_m = Number(document.getElementById("start_m").value);
-		minus_h = Number(document.getElementById("minus_h").value);
-		minus_m = Number(document.getElementById("minus_m").value);
+		start_m = goal_h = goal_m = 0;
+
+		if (document.getElementById("start_h").value != null)
+			start_h = Number(document.getElementById("start_h").value);
+		if (document.getElementById("start_m").value != null)
+			start_m = Number(document.getElementById("start_m").value);
+		if (document.getElementById("minus_h").value != null)
+			minus_h = Number(document.getElementById("minus_h").value);
+		if (document.getElementById("minus_m").value != null)
+			minus_m = Number(document.getElementById("minus_m").value);
+		if (document.getElementById("goal_h").value != null)
+			goal_h = Number(document.getElementById("goal_h").value);
+		if (document.getElementById("goal_m").value != null)
+			goal_m = Number(document.getElementById("goal_m").value);
 	
 		minus_m += Number(document.querySelector('input[name="morning"]:checked').value);
 		minus_m += Number(document.querySelector('input[name="dinner"]:checked').value);
 		
+		sum_m = minus_h * 60 + minus_m;	
+	
 		today = new Date();
 		cur_h = today.getHours();
 		cur_m = today.getMinutes();
@@ -38,18 +56,42 @@
 		text = "현재시간 " + cur_h + ":" + cur_m + ":" + cur_s;
 		document.getElementById("time").innerText = text;
 
-		sum = ((cur_h * 60) + cur_m);
-		sum -= ((start_h * 60) + start_m);
-		if (sum > 240 && sum <= 480)
-			sum -= 30;
-		if (sum > 480)
-			sum -= 60;
-		sum -= ((minus_h * 60) + minus_m);
-		text = "근무시간 " + Math.floor(sum / 60) + ":" + (sum % 60);
-		document.getElementById("work").innerText = text;
+		if(start_m > 0){
+			sum_w = ((cur_h * 60) + cur_m);
+			sum_w -= ((start_h * 60) + start_m);
+			if (sum_w > 240 && sum_w <= 480){
+				sum_w -= 30;
+				sum_m += 30;
+			}
+			if (sum_w > 480){
+				sum_w -= 60;
+				sum_m += 60;
+			}
+			sum_w -= ((minus_h * 60) + minus_m);
+			if (sum_w >= 0)
+				text = "근무시간 " + Math.floor(sum_w / 60) + ":" + (sum_w % 60);
+			else
+				text = "근무시간이 부족합니다";
+			document.getElementById("work").innerText = text;
+		}
+
+		if(sum_m > 0){
+			text = "제외시간 " + Math.floor(sum_m / 60) + ":" + (sum_m % 60);
+			document.getElementById("minus").innerText = text;
+		}
+
+		if(goal_h != 0 || goal_m != 0){
+			if (goal_h >= 8)
+				today.setMinutes(today.getMinutes() + goal_h * 60 + goal_m - sum_w + 60);
+			else if (goal_h >= 4)
+				today.setMinutes(today.getMinutes() + goal_h * 60 + goal_m - sum_w + 30);
+			else
+				today.setMinutes(today.getMinutes() + goal_h * 60 + goal_m - sum_w);
+			text = "퇴근시간 " + today.getHours() + ":" + today.getMinutes();
+			document.getElementById("goal").innerText = text;
+		}
 	}
 
 	setInterval("cal()", 1000)
 
 </script>
-
