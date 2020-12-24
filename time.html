@@ -23,12 +23,14 @@
 <script>
 	var start_h, start_m;
 	var minus_h, minus_m;
+	var middle_m;
 	var goal_h, goal_m;
 	var cur_h, cur_m, cur_s;
+	var sum_w, sum_m;
 	
-	var text, sum_w, sum_m;
+	var text, temp;
 	function cal(){
-		start_m = goal_h = goal_m = 0;
+		start_m = middle_m = goal_h = goal_m = 0;
 
 		if (document.getElementById("start_h").value != null)
 			start_h = Number(document.getElementById("start_h").value);
@@ -53,7 +55,25 @@
 		cur_m = today.getMinutes();
 		cur_s = today.getSeconds();
 		
-		text = "현재시간 " + cur_h + ":" + cur_m + ":" + cur_s;
+		text = "현재시간 ";
+		temp = cur_h;
+		if (temp < 10)
+			text += "0" + temp;
+		else
+			text += temp;
+		text += ":";
+		temp = cur_m;
+		if (temp < 10)
+			text += "0" + temp;
+		else
+			text += temp;
+		text += ":";
+		temp = cur_s;
+		if (temp < 10)
+			text += "0" + temp;
+		else
+			text += temp;
+
 		document.getElementById("time").innerText = text;
 
 		if(start_m > 0){
@@ -62,32 +82,68 @@
 			if (sum_w > 240 && sum_w <= 480){
 				sum_w -= 30;
 				sum_m += 30;
+				middle_m = 30;
 			}
 			if (sum_w > 480){
 				sum_w -= 60;
 				sum_m += 60;
+				middle_m = 60;
 			}
 			sum_w -= ((minus_h * 60) + minus_m);
-			if (sum_w >= 0)
-				text = "근무시간 " + Math.floor(sum_w / 60) + ":" + (sum_w % 60);
+			if (sum_w >= 0){
+				text = "근무시간 ";
+				temp = Math.floor(sum_w / 60);
+				if (temp < 10)
+					text += "0" + temp;
+				else
+					text += temp;
+				text += ":";
+				temp = sum_w % 60;
+				if (temp < 10)
+					text += "0" + temp;
+				else
+					text += temp;
+			}
 			else
 				text = "근무시간이 부족합니다";
 			document.getElementById("work").innerText = text;
 		}
 
 		if(sum_m > 0){
-			text = "제외시간 " + Math.floor(sum_m / 60) + ":" + (sum_m % 60);
+			text = "제외시간 ";
+			temp = Math.floor(sum_m / 60);
+			if (temp < 10)
+				text += "0" + temp;
+			else
+				text += temp;
+			text += ":";
+			temp = sum_m % 60;
+			if (temp < 10)
+				text += "0" + temp;
+			else
+				text += temp;
 			document.getElementById("minus").innerText = text;
 		}
 
 		if(goal_h != 0 || goal_m != 0){
 			if (goal_h >= 8)
-				today.setMinutes(today.getMinutes() + goal_h * 60 + goal_m - sum_w + 60);
+				today.setMinutes(today.getMinutes() + goal_h * 60 + goal_m - sum_w + 60 - middle_m);
 			else if (goal_h >= 4)
-				today.setMinutes(today.getMinutes() + goal_h * 60 + goal_m - sum_w + 30);
+				today.setMinutes(today.getMinutes() + goal_h * 60 + goal_m - sum_w + 30 - middle_m);
 			else
 				today.setMinutes(today.getMinutes() + goal_h * 60 + goal_m - sum_w);
-			text = "퇴근시간 " + today.getHours() + ":" + today.getMinutes();
+			text = "퇴근시간 ";
+			temp = today.getHours();
+			if (temp < 10)
+				text += "0" + temp;
+			else
+				text += temp;
+			text += ":";
+			temp = today.getMinutes();
+			if (temp < 10)
+				text += "0" + temp;
+			else
+				text += temp;
 			document.getElementById("goal").innerText = text;
 		}
 	}
