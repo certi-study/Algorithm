@@ -1,24 +1,35 @@
 <style>
+	.dash {
+		margin: 5px;
+		padding: 10px;
+		border: dashed 2px #ababab; 
+	}
 	.number { width: 5ch; }
 </style>
 
-입문 시간<br>
-<input class="number" id="start_h" maxlength="2">시 <input class="number" id="start_m" maxlength="2">분<br>
-조식<br>
-<input name="morning" type="radio" value="0" checked="checked">X
-<input name="morning" type="radio" value="30">식사
-<input name="morning" type="radio" value="10">Take Out
-<br>
-석식<br>
-<input name="dinner" type="radio" value="0" checked="checked">X
-<input name="dinner" type="radio" value="30">식사
-<input name="dinner" type="radio" value="10">Take Out
-<br>
-추가 제외 시간<br>
-<input class="number" id="minus_h" maxlength="2">시간 <input class="number" id="minus_m" maxlength="2">분
-<br>
-채울 시간<br>
-<input class="number" id="goal_h" maxlength="2">시간 <input class="number" id="goal_m" maxlength="2">분
+입문 시간
+<div class="dash">
+	<input class="number" id="start_h" maxlength="2">시 <input class="number" id="start_m" maxlength="2">분<br>
+</div>
+제외 시간
+<div class="dash">
+	조식:&nbsp;
+	<input name="morning" type="radio" value="0" checked="checked">X
+	<input name="morning" type="radio" value="30">식사
+	<input name="morning" type="radio" value="10">Take Out
+	<br>
+	석식:&nbsp;
+	<input name="dinner" type="radio" value="0" checked="checked">X
+	<input name="dinner" type="radio" value="30">식사
+	<input name="dinner" type="radio" value="10">Take Out
+	<br>
+	추가 제외 시간<br>
+	<input class="number" id="minus_h" maxlength="2">시간 <input class="number" id="minus_m" maxlength="2">분
+</div>
+채울 시간
+<div class="dash">
+	<input class="number" id="goal_h" maxlength="2">시간 <input class="number" id="goal_m" maxlength="2">분
+</div>
 <hr/>
 <div id="time"></div>
 <div id="work"></div>
@@ -59,14 +70,16 @@
 		cur_m = today.getMinutes();
 		cur_s = today.getSeconds();
 		
-		text = "현재시간 ";
+		text = '<span style="font-size: x-large;">';
 		temp = cur_h;
 		if (temp < 10)
-			text += "오전 0" + temp;
+			text += 'AM</span> <span style="font-size: xx-large;">0' + temp;
 		else if (temp < 12)
-			text += "오전 " + temp;
+			text += 'AM</span> <span style="font-size: xx-large;">0' + temp;
+		else if (temp == 12)
+			text += 'PM</span> <span style="font-size: xx-large;">0' + temp;
 		else
-			text += "오후 " + temp;
+			text += 'PM</span> <span style="font-size: xx-large;">0' + (temp - 12);
 		text += ":";
 		temp = cur_m;
 		if (temp < 10)
@@ -79,8 +92,9 @@
 			text += "0" + temp;
 		else
 			text += temp;
+		text += "</span>";
 
-		document.getElementById("time").innerText = text;
+		document.getElementById("time").innerHTML = text;
 
 		if(start_m > 0){
 			sum_w = ((cur_h * 60) + cur_m);
@@ -97,7 +111,7 @@
 			}
 			sum_w -= ((minus_h * 60) + minus_m);
 			if (sum_w >= 0){
-				text = "근무시간 ";
+				text = "근무시간: ";
 				temp = Math.floor(sum_w / 60);
 				if (temp < 10)
 					text += "0" + temp;
@@ -116,7 +130,7 @@
 		}
 
 		if(sum_m > 0){
-			text = "제외시간 ";
+			text = "[제외: ";
 			temp = Math.floor(sum_m / 60);
 			if (temp < 10)
 				text += "0" + temp;
@@ -128,6 +142,7 @@
 				text += "0" + temp;
 			else
 				text += temp;
+			text += "]";
 			document.getElementById("minus").innerText = text;
 		}
 
