@@ -1,20 +1,24 @@
+<style>
+	.number { width: 5ch; }
+</style>
+
 입문 시간<br>
-<input id="start_h">시 <input id="start_m">분<br>
+<input class="number" id="start_h" maxlength="2">시 <input class="number" id="start_m" maxlength="2">분<br>
 조식<br>
 <input name="morning" type="radio" value="0" checked="checked">X
 <input name="morning" type="radio" value="30">식사
-<input name="morning" type="radio" value="10">테이크아웃
+<input name="morning" type="radio" value="10">Take Out
 <br>
 석식<br>
 <input name="dinner" type="radio" value="0" checked="checked">X
 <input name="dinner" type="radio" value="30">식사
-<input name="dinner" type="radio" value="10">테이크아웃
+<input name="dinner" type="radio" value="10">Take Out
 <br>
 추가 제외 시간<br>
-<input id="minus_h">시간 <input id="minus_m">분
+<input class="number" id="minus_h" maxlength="2">시간 <input class="number" id="minus_m" maxlength="2">분
 <br>
 채울 시간<br>
-<input id="goal_h">시간 <input id="goal_m">분
+<input class="number" id="goal_h" maxlength="2">시간 <input class="number" id="goal_m" maxlength="2">분
 <hr/>
 <div id="time"></div>
 <div id="work"></div>
@@ -58,9 +62,11 @@
 		text = "현재시간 ";
 		temp = cur_h;
 		if (temp < 10)
-			text += "0" + temp;
+			text += "오전 0" + temp;
+		else if (temp < 12)
+			text += "오전 " + temp;
 		else
-			text += temp;
+			text += "오후 " + temp;
 		text += ":";
 		temp = cur_m;
 		if (temp < 10)
