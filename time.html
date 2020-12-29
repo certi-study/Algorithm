@@ -75,11 +75,13 @@
 		if (temp < 10)
 			text += 'AM</span> <span style="font-size: xx-large;">0' + temp;
 		else if (temp < 12)
-			text += 'AM</span> <span style="font-size: xx-large;">0' + temp;
+			text += 'AM</span> <span style="font-size: xx-large;">' + temp;
 		else if (temp == 12)
 			text += 'PM</span> <span style="font-size: xx-large;">0' + temp;
-		else
+		else if (temp < 22)
 			text += 'PM</span> <span style="font-size: xx-large;">0' + (temp - 12);
+		else
+			text += 'PM</span> <span style="font-size: xx-large;">' + (temp - 12);
 		text += ":";
 		temp = cur_m;
 		if (temp < 10)
